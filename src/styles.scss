@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    letter-spacing: 0em;
+    font-family: Livvic;
+}
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0!important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    color: $tinelBlackColor;
+}
+
+h3 {
+    font-size: 20px!important;
+    line-height: 24px!important;
+    font-weight: 700!important;
+}
+
+h4 {
+    font-size: 19px!important;
+    line-height: 24px!important;
+    font-weight: 700!important;
+    color: $tinelSecondaryColor;
+}
+
+h5 {
+    font-size: 18px!important;
+    line-height: 23px!important;
+    font-weight: 700!important;
+}
+
+h6 {
+    font-size: 15px!important;
+    line-height: 19px!important;
+    font-weight: 700!important;
+}

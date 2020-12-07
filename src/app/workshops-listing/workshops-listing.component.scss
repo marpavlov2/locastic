@@ -1,0 +1,248 @@
+@import "../../variables.scss";
+
+.workshops-listing-container {
+    display: flex;
+    flex-direction: column;
+    .sidebar-container {
+        padding: 25px 0 14px;
+        .categories {
+            .category {
+                margin-bottom: 25px;
+                a {
+                    cursor: pointer;
+                    font-size: 18px;
+                    line-height: 23px;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: #000;
+
+                    &:hover {
+                        color: #0097cc;
+                    }
+
+                    &.no-icon {
+                        margin-left: 32px !important;
+                    }
+                }
+                img {
+                    margin-right: 10px;
+                }
+
+                &.selected {
+                    a {
+                        color: #0097cc;
+                        border-bottom: 2px solid #0097cc;
+                    }
+                }
+            }
+        }
+    }
+    .workshops-container {
+        .workshops {
+            padding: 18px 0px;
+            .workshop-card {
+                display: flex;
+                height: 150px;
+                min-height: 150px;
+                border-radius: 6px;
+                border: 1px solid #f2f2f2;
+                margin-bottom: 20px;
+
+                &:hover {
+                    box-shadow: 1px 2px 16px 0px #7f7f7f;
+                }
+
+                .workshop-img {
+                    position: relative;
+                    background: url("../../assets/workshop-img-small.jpg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    min-width: 105px;
+                    height: 100%;
+
+                    .brush-img {
+                        position: absolute;
+                        background: url("../../assets/icons/brush-icon.svg") no-repeat center center, $tinelBlackColor;
+                        height: 32px;
+                        width: 32px;
+                        top: 13px;
+                        right: -16px;
+                    }
+                }
+
+                .workshop-content {
+                    width: 100%;
+                    padding: 5px 20px;
+                    .workshop-date-time {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 5px;
+                        .workshop-date,
+                        .workshop-time {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                margin-right: 5px;
+                            }
+                        }
+                        span {
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 17px;
+                        }
+                    }
+                    .workshop-title-container {
+                        min-height: 48px;
+                        overflow: hidden;
+                        h4 {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 2;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                    .workshop-price-container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .workshop-price {
+                            span {
+                                font-size: 16px;
+                                margin-right: 10px;
+                            }
+                        }
+
+                        .add-to-cart-btn {
+                            padding: 4px;
+                            background: $tinelPrimaryColor;
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 425px) {
+    .workshops-listing-container {
+        .workshops-container {
+            .workshops {
+                .workshop-card {
+                    .workshop-content {
+                        padding: 20px 20px 20px 25px;
+                        .workshop-date-time {
+                            flex-direction: row;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .workshops-listing-container {
+        .workshops-container {
+            .workshops {
+                padding: 40px 0px;
+                .workshop-card {
+                    margin: 0 auto;
+                    flex-direction: column;
+                    height: 450px;
+                    min-height: 450px;
+                    max-width: 320px;
+                    border-radius: 8px;
+                    margin-bottom: 40px;
+
+                    .workshop-img {
+                        background: url("../../assets/workshop-img-big.jpg");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        min-width: 100%;
+                        height: 180px;
+
+                        .brush-img {
+                            position: absolute;
+                            background: url("../../assets/icons/brush-icon.svg") no-repeat center center, $tinelBlackColor;
+                            height: 40px;
+                            width: 40px;
+                            bottom: -20px;
+                            top: unset;
+                            right: 20px;
+                        }
+                    }
+
+                    .workshop-content {
+                        width: 100%;
+                        padding: 20px 38px 37px;
+                        .workshop-date-time {
+                            display: flex;
+                            justify-content: flex-start;
+                            margin-bottom: 10px;
+                            .workshop-date {
+                                margin-right: 10px;
+                            }
+                            span {
+                                font-size: 15px;
+                                line-height: 19px;
+                            }
+                        }
+                        .workshop-title-container {
+                            min-height: unset;
+                            margin-bottom: 10px;
+                        }
+                        .workshop-price-container {
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .workshop-price {
+                                margin-bottom: 20px;
+                                h3 {
+                                    font-size: 29px !important;
+                                    line-height: 36px !important;
+                                }
+                            }
+
+                            .add-to-cart-btn {
+                                width: 100%;
+                                padding: 13.5px 0px;
+                                background: #ffc80c;
+                                box-shadow: 1px 2px 8px rgba(127, 127, 127, 0.25);
+                                border-radius: 6px;
+                                span {
+                                    display: block;
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    color: #1d1d1b;
+                                }
+                                img {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .workshops-listing-container {
+        padding-top: 60px;
+        flex-direction: row;
+        .sidebar-container {
+            min-width: 365px;
+            width: 365px;
+        }
+    }
+}

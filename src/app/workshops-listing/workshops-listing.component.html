@@ -1,0 +1,63 @@
+<div class="workshops-listing-container">
+    <aside class="sidebar-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="categories">
+                        <nav class="category" *ngFor="let category of workshopCategories" [class.selected]="selectedCategory === category.name" (click)="selectCategory(category.name)">
+                            <img [src]="getIcon(category.name, selectedCategory === category.name)" alt="" height="22px" width="22px" *ngIf="category.icon">
+                            <a [class.no-icon]="!category.icon">{{category.name}}</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="workshops-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Workshops</h2>
+                    <h6>Displayed: <span>{{this.filteredWorkshops.length}}</span></h6>
+                </div>
+            </div>
+        </div>
+        <div class="workshops">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-12 col-sm-6" *ngFor="let workshop of filteredWorkshops">
+                        <article class="workshop-card">
+                            <div class="workshop-img">
+                                <div class="brush-img"></div>
+                            </div>
+                            <div class="workshop-content">
+                                <div class="workshop-date-time">
+                                    <div class="workshop-date">
+                                        <img src="assets/icons/calendar-icon.svg" height="15" width="15" alt="Shoping cart icon">
+                                        <span> {{workshop.date}} </span>
+                                    </div>
+                                    <div class="workshop-time">
+                                        <img src="assets/icons/time-icon.svg" height="17" width="17" alt="Shoping cart icon">
+                                        <span> {{workshop.time}}h</span>
+                                    </div>
+                                </div>
+                                <div class="workshop-title-container">
+                                    <h4>{{workshop.title}}</h4>
+                                </div>
+                                <div class="workshop-price-container">
+                                    <div class="workshop-price">
+                                        <h3>{{workshop.price}}<span> EUR</span></h3>
+                                    </div>
+                                    <button class="add-to-cart-btn" (click)="addToCard(workshop)">
+                                        <img src="assets/eva_shopping-cart-outline.svg" height="32" width="32" alt="Shoping cart icon">
+                                        <span>Add to Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
